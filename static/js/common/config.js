@@ -1,6 +1,6 @@
 define(function () {
     return config = {
-        APPLICATION_NAME: 'ecommerce',
+        APPLICATION_NAME: 'discountAsciiWarehouse',
         TYPE: {
             PRODUCT: 'product',
             ADVERTISEMENT: 'advertisement'

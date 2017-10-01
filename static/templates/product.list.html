@@ -1,0 +1,12 @@
+
+<div class="grid" infinite-scroll="loadMore()" infinite-scroll-disabled="isEndOfCatalogue">
+    <div ng-repeat="item in galleryItems track by $index" >
+        <ng-switch on="item.type">
+            <product ng-switch-when="product" data="::item"></product>
+			
+			<advertisement ng-switch-when="advertisement" data="::item"></advertisement>
+	        
+        </ng-switch>
+    </div>
+
+</div>

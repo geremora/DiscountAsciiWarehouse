@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Discount Ascii Warehouse</title>
+    <script src="js/lib/require.js" data-main="js/config.js"></script>
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1>Discount Ascii Warehouse - Gerardo</h1>
+    
+          <div>Sponsered Ad:  </div>
+            
+            <img class="ad" ng-src="{{mainAd.src}}" />
+           
+
+       
+
+
+        <script>
+            window.onbeforeunload = function(){
+                window.scrollTo(0,0);
+            }
+        </script>
+    </header>
+    <section class="products">
+       <product-gallery></product-gallery>
+    </section>
+</body>
+
+</html>

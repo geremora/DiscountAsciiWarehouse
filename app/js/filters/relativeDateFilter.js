@@ -48,7 +48,7 @@ define(['app', 'dateformat'], function (app, dateformat) {
             return relativeTime + ' ago';
         }
         // otherwise return date in format (May 21st 2016 4:37 PM)
-        return dateformat(date, "mmm dS yyyy h:MM TT");
+        return dateFormat(date, "mmm dS yyyy h:MM TT");
     };
 
     /**

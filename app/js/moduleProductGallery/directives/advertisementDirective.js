@@ -1,8 +1,8 @@
 define([
     'app',
-    'text!../templates/order2.html',
+    'text!../templates/imageSponsor.html' /* I don't using ad.html name for adBlocker extension */
 ],
-    function (app, advertisementTemplate, productTemplate) {
+    function (app, advertisementTemplate) {
 
         var advertisementDirective = function () {
             return {

@@ -7,7 +7,7 @@ var config = {
         angular: '../bower_components/angular/angular',
         infinitiveScroll: '../bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min',
         lodash: '../bower_components/lodash/dist/lodash.min',
-        dateformat: '../bower_components/date.format/date.format',
+        moment: '../bower_components/moment/min/moment.min',
         appConfig: 'common/config',
         productGallery: 'moduleProductGallery/controllers/productGallery',
         service: 'services',

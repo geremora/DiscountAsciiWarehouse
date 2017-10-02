@@ -1,10 +1,8 @@
 <div class="face">
  
-    <p ng-bind="::data.face" style="font-size: 31px;"></p>
+    <p ng-bind="::data.face" ng-style="{'font-size': data.productStyle}"></p>
     <p ng-bind="::data.price | currency:'$&nbsp;':2"></p>
-    <p>
- 	 <time ng-bind="::data.date | relativeDate:'week'"></time> 
-
-	
+    <p title="{{data.date}}">
+ 	 <time  ng-bind="::data.date | relativeDate:'week'"></time> 
     </p>
 </div>

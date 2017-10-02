@@ -1,5 +1,5 @@
 
-var config = {
+let config = {
     baseUrl: 'js/',
     paths: {
         app: 'app',
@@ -39,7 +39,7 @@ requirejs([
     'advertisementDirective',
     'relativeDateFilter'
     ],
-    function (angular, config) {
+    (angular, config) => {
         angular.bootstrap(document, [config.APPLICATION_NAME]);
     }
 );

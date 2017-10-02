@@ -1,14 +1,14 @@
-define(["lodash"], function (_) {
+define(["lodash"], _ => {
 
-    var parse = function (data, headersGetter, status) {
-        var HTTP_SUCCESS = 200;
-        var RESPONSE_DELIMITER = /\n/g;
+    const parse = (data, headersGetter, status) => {
+        const HTTP_SUCCESS = 200;
+        const RESPONSE_DELIMITER = /\n/g;
 
         if (status !== HTTP_SUCCESS)
             return [];
 
         function parseJson(str) {
-            var json = null;
+            let json = null;
             try {
                 json = JSON.parse(str);
             } finally {

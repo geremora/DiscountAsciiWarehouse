@@ -1,8 +1,6 @@
-define(['app', 'appConfig'], function (app, config) {
+define(['app', 'appConfig'], (app, config) => {
 
-    var productCache = function ($cacheFactory) {
-        return $cacheFactory('productsCache');
-    };
+    const productCache = $cacheFactory => $cacheFactory('productsCache');
 
     productCache.$inject = ['$cacheFactory'];
     app.factory('productCache', productCache);

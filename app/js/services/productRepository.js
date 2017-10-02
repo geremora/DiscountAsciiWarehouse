@@ -6,22 +6,22 @@ define(
         'service/productService',
         'service/productCache'
     ],
-    function (app, _, config) {
+    (app, _, config) => {
 
-        var productRepository = function ($http, $q, productService, productCacheService) {
+        const productRepository = ($http, $q, productService, productCacheService) => {
 
-            var isLoading = false;
+            let isLoading = false;
 
             function clearCache() {
                 productCacheService.removeAll();
             }
 
             function getProducts(limit, sortBy) {
-                var productsCache = productCacheService.get(config.CACHE_ID_PRODUCTS) || [];
+                const productsCache = productCacheService.get(config.CACHE_ID_PRODUCTS) || [];
 
                 if (productsCache.length) {
-                    var deffered = $q.defer();
-                    var data = {
+                    const deffered = $q.defer();
+                    const data = {
                         products: productsCache.splice(0, limit),
                         isEndOfCatalogue: false
                     };
@@ -36,8 +36,8 @@ define(
                         .then(function downloaded(data) {
                             products = data.products;
 
-                            var display = products.slice(0, limit);
-                            var cache = products.slice(limit);
+                            const display = products.slice(0, limit);
+                            const cache = products.slice(limit);
 
                             Array.prototype.push.apply(productsCache, cache);
                             productCacheService.put(config.CACHE_ID_PRODUCTS, productsCache);
@@ -53,8 +53,8 @@ define(
             };
 
             return serviceAPI = {
-                getProducts: getProducts,
-                clearCache: clearCache
+                getProducts,
+                clearCache
             };
         };
 

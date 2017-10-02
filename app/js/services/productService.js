@@ -4,13 +4,11 @@ define(['app', 'lodash', 'appConfig', 'service/restManager'], function (app, _, 
 
         var transform = function (data) {
             return data.map(function (item) {
-                // Convert price from cents into dollars format (i.e. 3.81)
+             
                 item.price /= 100;
+               
+                item.productStyle = `${item.size}px`;
 
-                // Get font size in pixels
-                item.productStyle = item.size + 'px';
-
-                // Set type of the item
                 item.type = config.TYPE.PRODUCT;
                 return item;
             });

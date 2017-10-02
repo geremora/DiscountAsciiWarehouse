@@ -4,9 +4,9 @@ define(
         'appConfig',
         'service/productRepository',
         'service/advertisementService'
-    ], function (app, config) {
+    ], (app, config) => {
 
-        var controller = function ($scope, productRepository, advertisementService) {
+        const controller = ($scope, productRepository, advertisementService) => {
 
             function init() {
 
@@ -18,10 +18,10 @@ define(
             $scope.sortBy = '';
             $scope.mainAd = advertisementService.getRandomAdvertisement();
 
-            $scope.loadMore = function () {
+            $scope.loadMore = () => {
 
-                var advertisement = advertisementService.getRandomAdvertisement();
-                var products = productRepository.getProducts(config.LOAD_ITEMS, $scope.sortBy);
+                const advertisement = advertisementService.getRandomAdvertisement();
+                const products = productRepository.getProducts(config.LOAD_ITEMS, $scope.sortBy);
 
                 function success(data) {
                     if (data.isEndOfCatalogue) {
@@ -46,7 +46,7 @@ define(
             };
 
     
-            $scope.sortChange = function () {
+            $scope.sortChange = () => {
                 init();
                 productRepository.clearCache();
                 $scope.loadMore();

@@ -1,8 +1,8 @@
-define(['angular', 'service/plainTextToJson', 'appConfig', 'infinitiveScroll'], function (angular, plainTextToJson, config) {
+define(['angular', 'service/plainTextToJson', 'appConfig', 'infinitiveScroll'], (angular, plainTextToJson, config) => {
 
-    var app = angular.module(config.APPLICATION_NAME, ['infinite-scroll']);
+    const app = angular.module(config.APPLICATION_NAME, ['infinite-scroll']);
 
-    app.config(['$httpProvider', function ($httpProvider) {
+    app.config(['$httpProvider', $httpProvider => {
         $httpProvider.defaults.transformResponse = plainTextToJson;
     }]);
 

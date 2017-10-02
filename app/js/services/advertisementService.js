@@ -1,10 +1,10 @@
-define(['app', 'lodash', 'appConfig'], function (app, _, config) {
+define(['app', 'lodash', 'appConfig'], (app, _, config) => {
 
-    var advertisementService = function (restManager) {
-        var advertisements = [];
+    const advertisementService = restManager => {
+        const advertisements = [];
 
-        var __getAdvertisementNumber = function (numbers) {
-            var adRandom = _.random(1, 16);
+        const __getAdvertisementNumber = numbers => {
+            let adRandom = _.random(1, 16);
             if (!numbers.length)
                 return adRandom;
             
@@ -14,8 +14,8 @@ define(['app', 'lodash', 'appConfig'], function (app, _, config) {
             return adRandom;
         };
 
-        var getRandomAdvertisement = function () {
-            var adRandom = __getAdvertisementNumber(advertisements);
+        const getRandomAdvertisement = () => {
+            const adRandom = __getAdvertisementNumber(advertisements);
             advertisements.push(adRandom);
             return advertisement = {
                 type: config.TYPE.ADVERTISEMENT,
@@ -23,7 +23,7 @@ define(['app', 'lodash', 'appConfig'], function (app, _, config) {
             };
         };
         return {
-            getRandomAdvertisement: getRandomAdvertisement
+            getRandomAdvertisement
         };
     };
 

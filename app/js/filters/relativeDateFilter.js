@@ -1,6 +1,6 @@
-define(['app', 'moment', 'appConfig'], function (app, moment, config) {
+define(['app', 'moment', 'appConfig'], (app, moment, config) => {
 
-    var convertDate = function (date, validity) {
+    const convertDate = (date, validity) => {
 
         let itemDateMoment = moment(new Date(date));
       
@@ -14,17 +14,15 @@ define(['app', 'moment', 'appConfig'], function (app, moment, config) {
        return itemDateMoment.format(config.FORMAT_DATE);
     };
 
-    app.filter('relativeDate', function () {
-        return function (input, validity) {
-            var validityRange = null;
-            switch (validity) {
-                case 'week':
-                default:
-                    validityDaysRange = 7;
-                    break;
-            }
-            var date = convertDate(input, validityDaysRange);
-            return date;
-        };
+    app.filter('relativeDate', () => (input, validity) => {
+        const validityRange = null;
+        switch (validity) {
+            case 'week':
+            default:
+                validityDaysRange = 7;
+                break;
+        }
+        const date = convertDate(input, validityDaysRange);
+        return date;
     });
 });
